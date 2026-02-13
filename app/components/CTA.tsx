@@ -252,11 +252,11 @@ const CTA = () => {
                     onChange={handleInputChange}
                     className="w-full px-4 py-3 rounded-xl bg-white/5 border border-cyan-500/30 focus:border-cyan-500 focus:outline-none text-white"
                   >
-                    <option value="general">General Inquiry</option>
-                    <option value="ai-automation">AI Automation</option>
-                    <option value="custom-ai">Custom AI Solutions</option>
-                    <option value="chatbot">Chatbot Systems</option>
-                    <option value="data-intelligence">Data Intelligence</option>
+                    <option value="general" className="bg-gray-900 text-white">General Inquiry</option>
+                    <option value="ai-automation" className="bg-gray-900 text-white">AI Automation</option>
+                    <option value="custom-ai" className="bg-gray-900 text-white">Custom AI Solutions</option>
+                    <option value="chatbot" className="bg-gray-900 text-white">Chatbot Systems</option>
+                    <option value="data-intelligence" className="bg-gray-900 text-white">Data Intelligence</option>
                   </select>
                 </div>
 
