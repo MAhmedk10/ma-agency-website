@@ -2,8 +2,21 @@
 
 import React from 'react';
 import { Linkedin, Twitter, Github, Mail } from 'lucide-react';
+import Image from 'next/image';
 
 const Footer = () => {
+  // 🎨 LOGO CONFIGURATION - SAME AS NAVBAR
+  const USE_CUSTOM_LOGO = false; // Set to true when you add your logo
+  const LOGO_PATH = '/logo.png'; // Put your logo in public/logo.png
+
+  // 🔗 SOCIAL MEDIA CONFIGURATION
+  // Add your actual social media URLs here
+  const socialLinks = {
+    linkedin: '', // Example: 'https://linkedin.com/company/ma-agency'
+    twitter: '',  // Example: 'https://twitter.com/maagency'
+    github: '',   // Example: 'https://github.com/ma-agency'
+  };
+
   const scrollToSection = (sectionId: string) => {
     const element = document.getElementById(sectionId);
     if (element) {
@@ -11,10 +24,13 @@ const Footer = () => {
     }
   };
 
-  const handleSocialClick = (platform: string) => {
-    // In a real application, these would link to actual social media profiles
-    console.log(`Opening ${platform} profile`);
-    alert(`This would open the ${platform} profile in a real application`);
+  const handleSocialClick = (platform: string, url?: string) => {
+    if (url && url !== '') {
+      window.open(url, '_blank');
+    } 
+    // else {
+    //   alert(`Please add your ${platform} URL in the Footer component.\n\nUpdate the socialLinks object in Footer.tsx`);
+    // }
   };
 
   const handleEmailClick = () => {
@@ -30,11 +46,22 @@ const Footer = () => {
           <div className="space-y-4">
             <button
               onClick={() => scrollToSection('hero')}
-              className="flex items-center gap-2 cursor-pointer hover:opacity-80 transition-opacity"
+              className="flex items-center gap-3 cursor-pointer hover:opacity-80 transition-opacity"
             >
-              <div className="w-10 h-10 rounded-lg bg-gradient-to-br from-cyan-400 to-teal-500 flex items-center justify-center font-bold text-lg">
-                MA
-              </div>
+              {/* ✅ LOGO SUPPORT - Shows your logo or default gradient box */}
+              {USE_CUSTOM_LOGO ? (
+                <Image 
+                  src={LOGO_PATH} 
+                  alt="MA Agency Logo" 
+                  width={40} 
+                  height={40}
+                  className="object-contain"
+                />
+              ) : (
+                <div className="w-10 h-10 rounded-lg bg-gradient-to-br from-cyan-400 to-teal-500 flex items-center justify-center font-bold text-lg">
+                  MA
+                </div>
+              )}
               <span className="text-xl font-bold">MA Agency</span>
             </button>
             <p className="text-gray-400 text-sm">
@@ -122,34 +149,38 @@ const Footer = () => {
             <h4 className="font-semibold mb-3 sm:mb-4">Connect</h4>
             <div className="flex gap-4">
               <button 
-                onClick={() => handleSocialClick('LinkedIn')}
+                onClick={() => handleSocialClick('LinkedIn', socialLinks.linkedin)}
                 className="w-10 h-10 rounded-lg glass-card flex items-center justify-center hover:glow-box transition-all"
+                aria-label="LinkedIn"
               >
                 <Linkedin className="w-5 h-5" />
               </button>
               <button 
-                onClick={() => handleSocialClick('Twitter')}
+                onClick={() => handleSocialClick('Twitter', socialLinks.twitter)}
                 className="w-10 h-10 rounded-lg glass-card flex items-center justify-center hover:glow-box transition-all"
+                aria-label="Twitter"
               >
                 <Twitter className="w-5 h-5" />
               </button>
               <button 
-                onClick={() => handleSocialClick('GitHub')}
+                onClick={() => handleSocialClick('GitHub', socialLinks.github)}
                 className="w-10 h-10 rounded-lg glass-card flex items-center justify-center hover:glow-box transition-all"
+                aria-label="GitHub"
               >
                 <Github className="w-5 h-5" />
               </button>
               <button 
                 onClick={handleEmailClick}
                 className="w-10 h-10 rounded-lg glass-card flex items-center justify-center hover:glow-box transition-all"
+                aria-label="Email"
               >
                 <Mail className="w-5 h-5" />
               </button>
             </div>
-            <div className="mt-4 text-sm text-gray-400">
+            <div className="mt-4 text-sm text-gray-400 space-y-1">
               <button 
                 onClick={handleEmailClick}
-                className="hover:text-cyan-400 transition-colors block mb-1"
+                className="hover:text-cyan-400 transition-colors block"
               >
                 contact@maagency.ai
               </button>

@@ -1,6 +1,6 @@
 'use client';
 
-import React from 'react';
+import React,{useEffect} from 'react';
 import Navbar from './Navbar';
 import Hero from './Hero';
 import TrustStrip from './TrustStrip';
@@ -13,6 +13,12 @@ import CTA from './CTA';
 import Footer from './Footer';
 
 const MAAgencyWebsite = () => {
+  useEffect(() => {
+    if ('scrollRestoration' in window.history) {
+      window.history.scrollRestoration = 'manual';
+    }
+    window.scrollTo(0, 0);
+  }, []);
   return (
     <div className="relative bg-[#0a0118] text-white overflow-hidden">
       <Navbar />

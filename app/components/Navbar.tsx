@@ -2,10 +2,15 @@
 
 import React, { useState, useEffect } from 'react';
 import { ChevronRight, Menu, X } from 'lucide-react';
+import Image from 'next/image';
 
 const Navbar = () => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+
+  // 🎨 LOGO CONFIGURATION - CHANGE THIS TO ADD YOUR LOGO
+  const USE_CUSTOM_LOGO = false; // Set to true when you add your logo
+  const LOGO_PATH = '/logo.png'; // Put your logo in public/logo.png
 
   useEffect(() => {
     const handleScroll = () => {
@@ -39,11 +44,22 @@ const Navbar = () => {
       <div className="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center">
         <button
           onClick={() => scrollToSection('hero')}
-          className="flex items-center gap-2 cursor-pointer hover:opacity-80 transition-opacity"
+          className="flex items-center gap-3 cursor-pointer hover:opacity-80 transition-opacity"
         >
-          <div className="w-10 h-10 rounded-lg bg-gradient-to-br from-cyan-400 to-teal-500 flex items-center justify-center font-bold text-lg">
-            MA
-          </div>
+          {/* ✅ LOGO SUPPORT - Shows your logo or default gradient box */}
+          {USE_CUSTOM_LOGO ? (
+            <Image 
+              src={LOGO_PATH} 
+              alt="MA Agency Logo" 
+              width={40} 
+              height={40}
+              className="object-contain"
+            />
+          ) : (
+            <div className="w-10 h-10 rounded-lg bg-gradient-to-br from-cyan-400 to-teal-500 flex items-center justify-center font-bold text-lg">
+              MA
+            </div>
+          )}
           <span className="text-xl font-bold">MA Agency</span>
         </button>
 
