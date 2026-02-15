@@ -64,7 +64,7 @@ const Services = () => {
       title: 'Web Development',
       description: 'Create exceptional digital experiences with modern, high-performance web development built for speed, scalability, and impact.',
       icon: <Eye className="w-12 h-12 sm:w-16 sm:h-16" />,
-      image: '/services/Web development.png',
+      image: '/Services/Web development.png',
       direction: 'right',
       details: 'Our web development solutions combine cutting-edge technology with strategic design to deliver fast, secure, and scalable digital platforms. We build responsive websites, custom web applications, and seamless user experiences that strengthen your online presence and support long-term business growth.'
     }
