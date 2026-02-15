@@ -10,7 +10,7 @@ const Services = () => {
   const observerRefs = useRef<{ [key: string]: HTMLElement | null }>({});
 
   // 🎨 IMAGE CONFIGURATION - SET TO TRUE TO USE YOUR SERVICE IMAGES
-  const USE_SERVICE_IMAGES = false; // Change to true when you add images to public/services/
+  const USE_SERVICE_IMAGES = true; // Change to true when you add images to public/services/
 
   useEffect(() => {
     const observer = new IntersectionObserver(
@@ -37,7 +37,7 @@ const Services = () => {
       title: 'AI Automation',
       description: 'Transform repetitive workflows into intelligent systems. We build custom automation solutions that scale with your business, reducing costs by up to 70% while increasing accuracy.',
       icon: <Zap className="w-12 h-12 sm:w-16 sm:h-16" />,
-      image: '/services/ai-automation.jpg', // Add your image here
+      image: '/Services/AI Automation.png', // Add your image here
       direction: 'left',
       details: 'Our AI automation solutions include workflow optimization, intelligent data processing, automated reporting, and custom integration with your existing systems. We help you eliminate manual tasks and focus on what matters most.'
     },
@@ -46,7 +46,7 @@ const Services = () => {
       title: 'Custom AI Solutions',
       description: 'Bespoke AI systems designed for your unique challenges. From machine learning models to neural networks, we engineer solutions that give you a competitive edge.',
       icon: <Sparkles className="w-12 h-12 sm:w-16 sm:h-16" />,
-      image: '/services/custom-ai.jpg',
+      image: '/Services/Custom AI.png',
       direction: 'right',
       details: 'We develop custom machine learning models, predictive analytics systems, computer vision solutions, and natural language processing applications tailored to your specific business needs and goals.'
     },
@@ -55,18 +55,18 @@ const Services = () => {
       title: 'Chatbot Systems',
       description: 'Next-generation conversational AI that understands context and delivers human-like interactions. Boost customer satisfaction while reducing support costs by 60%.',
       icon: <Target className="w-12 h-12 sm:w-16 sm:h-16" />,
-      image: '/services/chatbot.jpg',
+      image: '/Services/AI Assistant.png',
       direction: 'left',
       details: 'Our chatbot solutions feature multi-language support, sentiment analysis, 24/7 availability, seamless handoff to human agents, and integration with your CRM and ticketing systems for a complete customer service solution.'
     },
     {
       id: 'service-4',
-      title: 'Data Intelligence',
-      description: 'Turn raw data into strategic insights. Our advanced analytics and predictive models help you make data-driven decisions with confidence.',
+      title: 'Web Development',
+      description: 'Create exceptional digital experiences with modern, high-performance web development built for speed, scalability, and impact.',
       icon: <Eye className="w-12 h-12 sm:w-16 sm:h-16" />,
-      image: '/services/data-intelligence.jpg',
+      image: '/services/Web development.png',
       direction: 'right',
-      details: 'We provide comprehensive data analytics, business intelligence dashboards, predictive modeling, data visualization, and actionable insights to drive your business forward and stay ahead of the competition.'
+      details: 'Our web development solutions combine cutting-edge technology with strategic design to deliver fast, secure, and scalable digital platforms. We build responsive websites, custom web applications, and seamless user experiences that strengthen your online presence and support long-term business growth.'
     }
   ];
 
