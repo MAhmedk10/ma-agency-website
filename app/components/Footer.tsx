@@ -101,7 +101,7 @@ const Footer = () => {
                   onClick={() => scrollToSection('services')}
                   className="hover:text-cyan-400 transition-colors text-left"
                 >
-                  Data Intelligence
+                  Web Development
                 </button>
               </li>
             </ul>
